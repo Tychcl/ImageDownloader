@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp1.Models;
 
 namespace WpfApp1.ViewModel
 {
@@ -39,6 +40,21 @@ namespace WpfApp1.ViewModel
         {
             double sum = Downloaders.Sum(d => d.Progress);
             TotalProgress = sum / _totalDownloaders;
+        }
+
+        private RelayCommand _downloadAll;
+        public RelayCommand DownloadAll
+        {
+            get
+            {
+                return _downloadAll ?? (_downloadAll = new RelayCommand(obj =>
+                {
+                    foreach (var downloader in Downloaders)
+                    {
+                        downloader.StartDownload.Execute(null);
+                    }
+                }));
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

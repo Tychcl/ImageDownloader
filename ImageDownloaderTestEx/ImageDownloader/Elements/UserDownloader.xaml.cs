@@ -32,11 +32,11 @@ namespace ImageDownloader.Elements
             Id = id;
         }
 
-        private async void StartButton_Click(object sender, RoutedEventArgs e)
+        public async void StartButton_Click(object sender, RoutedEventArgs e)
         {
             StartButton.IsEnabled = false;
             CancelButton.IsEnabled = true;
-            ProgressBar.Value = 0;
+            //ProgressBar.Value = 0;
             ResultText.Text = "Загрузка...";
 
             Token = new CancellationTokenSource();
@@ -68,7 +68,7 @@ namespace ImageDownloader.Elements
             {
                 await Dispatcher.InvokeAsync(() =>
                 {
-                    ProgressBar.Value = progress;
+                    //ProgressBar.Value = progress;
                     UpdProgress?.Invoke(Id, progress);
                 });
             };

@@ -13,7 +13,7 @@
         <TextBox Margin="10 5 10 5" TextWrapping="Wrap" Text="{Binding Url, UpdateSourceTrigger=PropertyChanged}" MaxWidth="240"/>
         <Button Content="Начать загрузку" Command="{Binding DataContext.StartDownload, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="10 5 10 5" Padding="5" IsEnabled="{Binding StartButtonIsEnabled}"/>
         <Button Content="Отменить" Command="{Binding DataContext.CancelDownload, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="10 5 10 5" Padding="5" IsEnabled="{Binding CancelButtonIsEnabled}"/>
-        <ProgressBar Value="{Binding Done}" Height="20" Margin="10 5 10 5" Minimum="0" Maximum="1"/>
+        <!--<ProgressBar Value="{Binding Done}" Height="20" Margin="10 5 10 5" Minimum="0" Maximum="1"/>-->
         <TextBlock Text="{Binding Status}" Margin="10 5 10 5" TextWrapping="Wrap" IsEnabled="False" Foreground="White"/>
     </StackPanel>
 </UserControl>

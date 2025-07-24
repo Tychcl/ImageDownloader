@@ -13,7 +13,7 @@
         <TextBox Margin="10 5 10 5" TextWrapping="Wrap" x:Name="SetUrl" MaxWidth="240"/>
         <Button x:Name="StartButton" Content="Начать загрузку" Click="StartButton_Click" Margin="10 5 10 5" Padding="5"/>
         <Button x:Name="CancelButton" Content="Отменить" Click="CancelButton_Click" Margin="10 5 10 5" Padding="5" IsEnabled="False"/>
-        <ProgressBar x:Name="ProgressBar" Height="20" Margin="10 5 10 5" Minimum="0" Maximum="1"/>
+        <!--<ProgressBar x:Name="ProgressBar" Height="20" Margin="10 5 10 5" Minimum="0" Maximum="1"/>-->
         <TextBlock x:Name="ResultText" Margin="10 5 10 5" TextWrapping="Wrap" IsEnabled="False" Foreground="White"/>
     </StackPanel>
 </UserControl>

@@ -10,6 +10,7 @@
         <StackPanel HorizontalAlignment="Left">
             <StackPanel x:Name="Parent" Orientation="Horizontal" VerticalAlignment="Top"/>
             <ProgressBar Value="{Binding TotalProgress}" Height="20" Margin="5" Minimum="0" Maximum="1"/>
+            <Button Margin="5" Command="{Binding DownloadAll}" Content="Загрузить все"/>
         </StackPanel>
     </Grid>
 </Window>
