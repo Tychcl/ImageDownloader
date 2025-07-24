@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WpfApp1.Views.UserDownloader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Views"
+             mc:Ignorable="d" 
+                     Height="auto" Width="auto" Background="DarkSlateGray" Margin="5" >
+    <StackPanel DataContext="{Binding Downloader}">
+        <Border Margin="10 5 10 5" BorderThickness="2" BorderBrush="Black">
+            <Image Source="{Binding Image}" Height="150" Stretch="Fill" MinWidth="150" MaxWidth="240"/>
+        </Border>
+        <TextBox Margin="10 5 10 5" TextWrapping="Wrap" Text="{Binding Url, UpdateSourceTrigger=PropertyChanged}" MaxWidth="240"/>
+        <Button Content="Начать загрузку" Command="{Binding DataContext.StartDownload, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="10 5 10 5" Padding="5" IsEnabled="{Binding StartButtonIsEnabled}"/>
+        <Button Content="Отменить" Command="{Binding DataContext.CancelDownload, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="10 5 10 5" Padding="5" IsEnabled="{Binding CancelButtonIsEnabled}"/>
+        <ProgressBar Value="{Binding Done}" Height="20" Margin="10 5 10 5" Minimum="0" Maximum="1"/>
+        <TextBlock Text="{Binding Status}" Margin="10 5 10 5" TextWrapping="Wrap" IsEnabled="False" Foreground="White"/>
+    </StackPanel>
+</UserControl>
